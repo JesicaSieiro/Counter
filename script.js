@@ -23,7 +23,8 @@ function runAnimation(){
                 num.classList.remove('in')
                 num.classList.add('out')
                
-            /* La nextElementSiblingpropiedad devuelve el siguiente elemento en el mismo nivel de árbol. */    
+            /* La nextElementSiblingpropiedad devuelve el siguiente elemento 
+            en el mismo nivel de árbol. */    
             }else if(e.animationName ==='goOut' && num.nextElementSibling){
                 num.nextElementSibling.classList.add('in')
             }else{
@@ -36,7 +37,5 @@ function runAnimation(){
 }
 replay.addEventListener('click',()=>{
     resetDOM();
-    runAnimation();
-   
-    
+    runAnimation(); 
 })
