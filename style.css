@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*
+{
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.counter{
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.counter.hide{
+    transform: translate(-50%,-50%) scale(0);
+    animation: hide .2s ease-out;
+}
+@keyframes hide{
+    0%{
+        transform: translate(-50%,-50%) scale(1);
+    }
+    100%{
+        transform: translate(-50%,-50%) scale(0);
+    }
+}
+
+.final{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    text-align: center;
+}
+
+.final.show{
+    transform: translate(-50%, -50%) scale(1);
+    animation: show .2s ease-out;
+}
+@keyframes show{
+    0%{
+
+        transform: translate(-50%,-50%) scale(0);
+    }
+    30%{
+        transform: translate(-50%,-50%) scale(1.4);
+    }
+    100%{
+        transform: translate(-50%,-50%) scale(1);
+    }
+}
+h1{
+    font-size: 50px;
+}
+h4{
+    font-size: 40px;
+}
+.nums span{
+ 
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(120deg);
+    transform-origin: bottom center;
+    font-size: 60px;
+    font-weight: 600;
+    color: #a809b1;
+    opacity: 0;
+}
+.nums span.in{
+    transform: translate(-50%,-50%) rotate(0deg);
+    animation: goIn .5s ease-in-out;
+    opacity: 1;
+}
+.nums span.out{
+    animation: goOut .5s ease-in-out;
+}
+@keyframes goIn{
+    0%{
+        transform: translate(-50%,-50%) rotate(120deg);
+    }
+    30%{
+        transform: translate(-50%,-50%) rotate(20deg);
+    }
+    60%{
+        transform: translate(-50%,-50%) rotate(10deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(0deg) ;
+    }
+}
+@keyframes goOut{
+    0%{
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+   
+    60%{
+        transform: translate(-50%,-50%) rotate(20deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(120deg);
+    }
+}
+#replay{
+    background-color: #3498bd;
+    border-radius: 3px;
+    border: none;
+    color:#fff;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: all .3s;
+}
+#replay span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: .3s;
+}
+#replay span::after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: .5s;
+}
+#replay:hover span{
+    padding-right: 25px;
+}
+#replay:hover span:after{
+    opacity: 1;
+    right: 0;
+}
